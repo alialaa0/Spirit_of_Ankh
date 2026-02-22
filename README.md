@@ -1,1 +1,1 @@
-# Spirit_of_Ankh-_Smart_Tourism_Management_with_Real-Time_Al_Insights
+#Spirit of Ankh: Smart Tourism Management with Real-Time Al Insights
