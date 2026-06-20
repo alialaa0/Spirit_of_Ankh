@@ -1,115 +1,116 @@
-# Data Dictionary v1.1
+# Data Dictionary v1.2
 
-## Table Schema
+## Dataset Columns
 
 | Column | Data Type | Description | Example |
-|---------|----------|-------------|---------|
+|----------|----------|----------|----------|
 | timestamp | TIMESTAMP | Full date and time of the observation | 2025-07-01 14:30:00 |
 | date | DATE | Date only | 2025-07-01 |
 | year | INTEGER | Year | 2025 |
 | month | INTEGER | Month number | 7 |
 | day | INTEGER | Day of month | 1 |
-| hour | INTEGER | Hour of day (24h format) | 14 |
+| hour | INTEGER | Hour of day (24-hour format) | 14 |
 | minute | INTEGER | Minute of hour | 30 |
+| day_of_week | VARCHAR | Day name | Monday |
+| season | VARCHAR | Season of the year | Summer |
 | location_id | VARCHAR | Unique location identifier | GZ001 |
 | location_name | VARCHAR | Tourist attraction name | Pyramids of Giza |
 | location_type | VARCHAR | Attraction category | Historical |
-| city | VARCHAR | City / Governorate | Giza |
+| city | VARCHAR | City/Governorate | Giza |
 | capacity | INTEGER | Maximum operational capacity | 2500 |
-| visitor_count | INTEGER | Current number of visitors | 1800 |
+| visitor_count | INTEGER | Number of visitors at the observation time | 1800 |
 | occupancy_rate | FLOAT | Visitor count divided by capacity | 0.72 |
 | crowd_status | VARCHAR | Crowd condition level | Busy |
 | temperature_c | FLOAT | Temperature in Celsius | 34.5 |
 | weather_condition | VARCHAR | Weather category | Sunny |
-| is_real_weather | BOOLEAN | Weather source indicator | 0 |
-| special_event | BOOLEAN | Indicates event occurrence | 1 |
+| is_real_weather | BOOLEAN | Indicates whether weather data comes from a real API or simulated source | 0 |
+| special_event | BOOLEAN | Indicates whether a special event is active | 1 |
+| event_type | VARCHAR | Type of special event | Festival |
 | is_weekend | BOOLEAN | Weekend indicator | 1 |
+| is_holiday | BOOLEAN | Public holiday indicator | 1 |
 
 ---
 
 # Business Rules
 
-## 1. Crowd Status Classification
+## Crowd Status
 
-Crowd status is derived from the occupancy rate.
-
-### Formula
-
-```text
-occupancy_rate = visitor_count / capacity
-```
-
-### Classification Rules
-
-| Occupancy Rate | Crowd Status |
-|----------------|-------------|
+| Occupancy Rate | Status |
+|---------------|---------|
 | < 60% | Normal |
 | 60% - 85% | Busy |
 | > 85% | Overcrowded |
 
-### Examples
-
-| Visitor Count | Capacity | Occupancy Rate | Crowd Status |
-|--------------|----------|----------------|-------------|
-| 1200 | 2500 | 0.48 | Normal |
-| 1800 | 2500 | 0.72 | Busy |
-| 2300 | 2500 | 0.92 | Overcrowded |
-
 ---
 
-## 2. Weather Condition
+## Weather Condition
 
 ### Allowed Values
 
-| Value | Description |
-|---------|------------|
-| Sunny | Clear sky and sunny weather |
-| Cloudy | Mostly cloudy conditions |
-| Rainy | Rain is occurring |
-| Windy | High wind conditions |
-| Foggy | Reduced visibility due to fog |
+- Sunny
+- Cloudy
+- Rainy
+- Windy
+- Foggy
 
 ---
 
-## 3. Location Type
+## Location Type
 
 ### Allowed Values
 
-| Value | Description |
-|---------|------------|
-| Historical | Historical landmarks and heritage sites |
-| Museum | Museums and exhibitions |
-| Cultural | Cultural attractions and centers |
-| Natural | Natural attractions and parks |
-| Market | Traditional markets and shopping areas |
+- Historical
+- Museum
+- Cultural
+- Natural
+- Market
 
 ---
 
-## 4. Special Event
-
-Indicates whether a special event is taking place at the location.
+## Season
 
 ### Allowed Values
+
+- Winter
+- Spring
+- Summer
+- Autumn
+
+---
+
+## Event Type
+
+### Allowed Values
+
+- None
+- Festival
+- Conference
+- Exhibition
+- National Event
+
+---
+
+## Special Event
+
+### Values
 
 | Value | Meaning |
 |---------|---------|
 | 0 | No Event |
 | 1 | Event Active |
 
-### Event Examples
+### Examples
 
 - Cultural Festival
 - Museum Exhibition
-- National Holiday
+- National Holiday Event
 - Tourism Campaign Event
-- Concert
-- International Conference
 
 ---
 
-## 5. Weekend Indicator
+## Is Weekend
 
-Determines whether the observation date falls on a weekend.
+### Values
 
 | Value | Meaning |
 |---------|---------|
@@ -118,91 +119,111 @@ Determines whether the observation date falls on a weekend.
 
 ---
 
-## 6. Real Weather Indicator
+## Is Holiday
 
-Specifies the source of weather information.
+### Values
 
 | Value | Meaning |
 |---------|---------|
-| 0 | Simulated / Generated Weather Data |
-| 1 | Real Weather Data |
+| 0 | Normal Day |
+| 1 | Public Holiday |
+
+### Examples
+
+- Eid Al-Fitr
+- Eid Al-Adha
+- Sham El-Nessim
+- Revolution Day
+- New Year Holiday
 
 ---
 
-# Data Relationships
-
-## Occupancy Flow
+# Relationships
 
 ```text
 visitor_count
-      │
-      ▼
+      ↓
 occupancy_rate
-      │
-      ▼
+      ↓
 crowd_status
 ```
 
-## Relationship Description
+---
 
-1. `visitor_count` records the number of visitors present.
-2. `capacity` defines the maximum supported visitors.
-3. `occupancy_rate` is calculated using:
+# Feature Categories
 
-```text
-occupancy_rate = visitor_count / capacity
-```
+## Time Features
 
-4. `crowd_status` is determined from the occupancy rate according to the business rules.
+- timestamp
+- date
+- year
+- month
+- day
+- hour
+- minute
+- day_of_week
+- season
 
 ---
 
-# Data Quality Rules
+## Location Features
 
-| Rule | Description |
-|--------|-------------|
-| visitor_count <= capacity | Visitor count cannot exceed capacity |
-| occupancy_rate >= 0 | Occupancy rate cannot be negative |
-| occupancy_rate <= 1 | Occupancy rate cannot exceed 100% |
-| temperature_c > -20 | Minimum expected temperature |
-| temperature_c < 60 | Maximum expected temperature |
-| location_id IS NOT NULL | Location identifier is mandatory |
-| timestamp IS NOT NULL | Timestamp is mandatory |
-| crowd_status IN (Normal, Busy, Overcrowded) | Valid crowd status values only |
-| weather_condition IN (Sunny, Cloudy, Rainy, Windy, Foggy) | Valid weather categories only |
+- location_id
+- location_name
+- location_type
+- city
+- capacity
 
 ---
 
-# Sample Record
+## Crowd Features
 
-| Column | Value |
-|----------|---------|
-| timestamp | 2025-07-01 14:30:00 |
-| date | 2025-07-01 |
-| year | 2025 |
-| month | 7 |
-| day | 1 |
-| hour | 14 |
-| minute | 30 |
-| location_id | GZ001 |
-| location_name | Pyramids of Giza |
-| location_type | Historical |
-| city | Giza |
-| capacity | 2500 |
-| visitor_count | 1800 |
-| occupancy_rate | 0.72 |
-| crowd_status | Busy |
-| temperature_c | 34.5 |
-| weather_condition | Sunny |
-| is_real_weather | 0 |
-| special_event | 1 |
-| is_weekend | 1 |
+- visitor_count
+- occupancy_rate
+- crowd_status
 
 ---
 
-# Version History
+## Weather Features
 
-| Version | Date | Description |
-|----------|----------|-------------|
-| 1.0 | June 2025 | Initial Data Dictionary |
-| 1.1 | July 2025 | Added business rules, data quality checks, relationships, and sample records |
+- temperature_c
+- weather_condition
+- is_real_weather
+
+---
+
+## Event Features
+
+- special_event
+- event_type
+
+---
+
+## Calendar Features
+
+- is_weekend
+- is_holiday
+
+---
+
+# Dataset Summary
+
+| Item | Value |
+|--------|--------|
+| Total Columns | 24 |
+| Tourist Locations | 25 |
+| Cities Covered | 9 |
+| Data Type | Tourism Crowd Analytics |
+| Update Frequency | 5–10 Seconds (Live Stream) |
+| Historical Data | 2M–5M+ Records |
+| ML Target | visitor_count |
+| Warehouse | Snowflake |
+| Transformation Tool | dbt |
+
+---
+
+# Project
+
+**Spirit of Ankh – Smart Tourism Intelligence Platform**
+
+Version: **1.2**
