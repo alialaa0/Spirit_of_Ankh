@@ -96,7 +96,7 @@ def is_location_open(
 def generate_sensor_data():
 
     locations_df = pd.read_csv(
-    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Data", "core_locations.csv")
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "core_locations.csv")
 )
 
     city_reference = build_city_reference(
