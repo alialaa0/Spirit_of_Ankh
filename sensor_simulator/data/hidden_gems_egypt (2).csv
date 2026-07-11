@@ -1,0 +1,59 @@
+id,name,city,type,weight,latitude,longitude,opening_time,closing_time
+GIZ_01,Pyramid of Userkaf,Giza,Historical,3,29.8714,31.2167,08:00,17:00
+GIZ_02,Mastaba of Ti,Giza,Historical,4,29.8744,31.2156,08:00,17:00
+GIZ_03,Pyramid of Djoser South Tomb,Giza,Historical,4,29.8713,31.2165,08:00,17:00
+GIZ_04,Qanater El Khairiya Gardens,Giza,Natural,3,30.1833,31.1167,08:00,17:00
+GIZ_05,Saqqara Imhotep Museum,Giza,Museum,2,29.8714,31.2160,09:00,17:00
+CAI_01,Mosque of Ibn Tulun,Cairo,Cultural,2,30.0263,31.2494,09:00,17:00
+CAI_02,El Moez Street,Cairo,Cultural,2,30.0486,31.2614,09:00,22:00
+CAI_03,Darb Al Ahmar District,Cairo,Historical,4,30.0389,31.2603,00:00,23:59
+CAI_04,Coptic Museum,Cairo,Museum,2,30.0058,31.2294,09:00,17:00
+CAI_05,Gayer-Anderson Museum,Cairo,Museum,3,30.0261,31.2492,09:00,17:00
+CAI_06,Wikala of El-Ghouri,Cairo,Market,4,30.0472,31.2608,09:00,21:00
+CAI_07,Mosque of Amr ibn al-As,Cairo,Cultural,3,30.0056,31.2289,08:00,22:00
+CAI_08,Fustat Archaeological Site,Cairo,Historical,5,30.0022,31.2317,09:00,17:00
+CAI_09,Baron Empain Palace,Cairo,Historical,3,30.0833,31.3333,09:00,17:00
+CAI_10,El Fishawi Market Area,Cairo,Market,2,30.0475,31.2619,10:00,02:00
+ALX_01,Montaza Royal Gardens,Alexandria,Natural,2,31.2833,29.9667,07:00,22:00
+ALX_02,El Anfushi Tombs,Alexandria,Historical,4,31.2014,29.8956,09:00,17:00
+ALX_03,Ras El Tin Palace Gardens,Alexandria,Cultural,4,31.2119,29.8833,09:00,17:00
+ALX_04,Attarine Antique Market,Alexandria,Market,3,31.1994,29.9044,10:00,20:00
+ALX_05,Kom el-Dikka Roman Theatre,Alexandria,Historical,2,31.1986,29.9069,09:00,17:00
+ALX_06,Greco-Roman Museum,Alexandria,Museum,3,31.1989,29.9089,09:00,17:00
+ALX_07,El Shatby Necropolis,Alexandria,Historical,5,31.2108,29.9206,09:00,17:00
+LUX_01,Medinat Habu Temple,Luxor,Historical,2,25.7197,32.6017,06:00,17:00
+LUX_02,Ramesseum Temple,Luxor,Historical,3,25.7283,32.6100,06:00,17:00
+LUX_03,Deir el-Medina,Luxor,Historical,3,25.7317,32.6044,06:00,17:00
+LUX_04,Luxor Museum,Luxor,Museum,2,25.6997,32.6394,09:00,21:00
+LUX_05,Mummification Museum,Luxor,Museum,3,25.6994,32.6400,09:00,21:00
+LUX_06,Colossi of Memnon,Luxor,Historical,2,25.7208,32.6103,06:00,17:00
+LUX_07,Habu Coptic Market,Luxor,Market,5,25.7200,32.6020,08:00,20:00
+ASW_01,Monastery of St Simeon,Aswan,Historical,4,24.0833,32.8667,08:00,17:00
+ASW_02,Nubia Museum,Aswan,Museum,2,24.0800,32.8989,09:00,16:00
+ASW_03,Elephantine Island,Aswan,Historical,3,24.0894,32.8856,08:00,17:00
+ASW_04,Kitchener Island Botanical Garden,Aswan,Natural,3,24.0908,32.8819,08:00,17:00
+ASW_05,Tombs of the Nobles Aswan,Aswan,Historical,4,24.0917,32.8789,08:00,17:00
+ASW_06,Nubian Village Gharb Soheil,Aswan,Cultural,3,24.0500,32.8667,08:00,20:00
+ASW_07,Nubian Market Aswan Souq,Aswan,Market,4,24.0886,32.8997,09:00,22:00
+SHA_01,Ras Mohammed National Park,Sharm El Sheikh,Natural,2,27.7333,34.2500,08:00,17:00
+SHA_02,Nabq Protected Area,Sharm El Sheikh,Natural,4,28.0667,34.4167,08:00,17:00
+SHA_03,Old Market Sharm,Sharm El Sheikh,Market,3,27.9119,34.3283,10:00,24:00
+SHA_04,St Catherine Monastery,Sharm El Sheikh,Historical,2,28.5556,33.9761,09:00,12:00
+SHA_05,Colored Canyon,Sharm El Sheikh,Natural,3,28.5833,34.3167,07:00,17:00
+DAH_01,Blue Hole Dahab,Dahab,Natural,2,28.5714,34.5394,00:00,23:59
+DAH_02,Canyon Dahab,Dahab,Natural,3,28.4833,34.5167,00:00,23:59
+DAH_03,Assalah Bedouin Market,Dahab,Market,3,28.4892,34.5131,10:00,23:00
+DAH_04,Wadi Gnai,Dahab,Natural,5,28.4500,34.4833,06:00,18:00
+DAH_05,Ras Abu Gallum,Dahab,Natural,4,28.6167,34.5500,06:00,18:00
+HUR_01,El Gouna Old Town,Hurghada,Cultural,3,27.3833,33.6667,00:00,23:59
+HUR_02,Hurghada Museum,Hurghada,Museum,3,27.2578,33.8119,09:00,21:00
+HUR_03,Sharm El Naga Bay,Hurghada,Natural,4,27.1167,33.9333,08:00,17:00
+HUR_04,Gifton Island,Hurghada,Natural,4,27.2167,33.9000,08:00,17:00
+HUR_05,Bedouin Market Hurghada,Hurghada,Market,4,27.2583,33.8108,10:00,22:00
+FAY_01,Wadi El Hitan Whale Valley,Fayoum,Natural,2,29.2667,30.0333,08:00,17:00
+FAY_02,Qarun Lake,Fayoum,Natural,3,29.4833,30.5500,00:00,23:59
+FAY_03,Karanis Roman City,Fayoum,Historical,4,29.5167,30.9000,08:00,17:00
+FAY_04,Hawara Pyramid,Fayoum,Historical,4,29.2667,30.9000,08:00,17:00
+FAY_05,El Lahun Pyramid,Fayoum,Historical,4,29.2414,30.9706,08:00,17:00
+FAY_06,Fayoum Pottery Village Tunis,Fayoum,Market,3,29.3083,30.8428,09:00,18:00
+FAY_07,Wadi El Hitan Fossil Museum,Fayoum,Museum,4,29.1833,30.6833,08:00,17:00
