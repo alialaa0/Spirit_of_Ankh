@@ -1,0 +1,46 @@
+timestamp,simulation_hour,day_of_week,is_weekend,location_id,location_name,city,location_type,latitude,longitude,is_open,opening_hour,closing_hour,visitor_count,crowd_density,crowd_level,temperature_c,humidity,weather_condition,weather_factor,event_name,event_type,event_multiplier,holiday_overlap,school_vacation,tourism_season,resource_usage,noise_level_db,satisfaction_score,peak_flag
+2026-07-04T02:20:06.889629,2,Saturday,1,CAI_01,Egyptian Museum,Cairo,Museum,30.0478,31.2336,0,9,17,0,0.0,Low,25.8,69,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,CAI_02,NMEC,Cairo,Museum,30.0061,31.2485,0,9,17,0,0.0,Low,25.8,69,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,CAI_03,Salah El-Din Citadel,Cairo,Historical,30.0299,31.2615,0,8,17,0,0.0,Low,25.8,69,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,CAI_04,Khan El Khalili,Cairo,Market,30.0478,31.2625,0,9,23,0,0.0,Low,25.8,69,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,CAI_05,Al Muizz Street,Cairo,Historical,30.0524,31.262,0,8,23,0,0.0,Low,25.8,69,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,CAI_06,Cairo Tower,Cairo,Leisure,30.0459,31.2243,0,9,23,0,0.0,Low,25.8,69,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,CAI_07,Al Azhar Park,Cairo,Leisure,30.04,31.2688,0,9,22,0,0.0,Low,25.8,69,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,GIZ_01,Pyramids of Giza,Giza,Historical,29.9792,31.1342,0,8,17,0,0.0,Low,25.21,71,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,GIZ_02,Great Sphinx,Giza,Historical,29.9753,31.1376,0,8,17,0,0.0,Low,25.21,71,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,GIZ_03,Grand Egyptian Museum,Giza,Museum,29.9884,31.1307,0,9,18,0,0.0,Low,25.21,71,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,GIZ_04,Saqqara Necropolis,Giza,Historical,29.8711,31.2165,0,8,17,0,0.0,Low,25.21,71,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,GIZ_05,Dahshur Pyramids,Giza,Historical,29.8017,31.2056,0,8,17,0,0.0,Low,25.21,71,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,ALX_01,Bibliotheca Alexandrina,Alexandria,Cultural,31.2089,29.9092,0,9,19,0,0.0,Low,25.16,85,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.2,2,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,ALX_02,Qaitbay Citadel,Alexandria,Historical,31.2136,29.8853,0,8,18,0,0.0,Low,25.16,85,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.2,2,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,ALX_03,Catacombs of Kom El Shoqafa,Alexandria,Historical,31.182,29.89,0,9,17,0,0.0,Low,25.16,85,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.2,2,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,ALX_04,Montaza Palace Gardens,Alexandria,Leisure,31.285,30.017,0,8,22,0,0.0,Low,25.16,85,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.2,2,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,ALX_05,Stanley Bridge,Alexandria,Leisure,31.2456,29.9668,1,0,23,853,0.07,Low,25.16,85,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.2,2,1,1,Low,43.5,98.6,0
+2026-07-04T02:20:06.889629,2,Saturday,1,LUX_01,Karnak Temple,Luxor,Historical,25.7188,32.6573,0,6,17,0,0.0,Low,28.29,29,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,LUX_02,Luxor Temple,Luxor,Historical,25.6996,32.6396,0,6,22,0,0.0,Low,28.29,29,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,LUX_03,Valley of the Kings,Luxor,Historical,25.7402,32.6014,0,6,17,0,0.0,Low,28.29,29,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,LUX_04,Hatshepsut Temple,Luxor,Historical,25.7382,32.6067,0,6,17,0,0.0,Low,28.29,29,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,LUX_05,Valley of the Queens,Luxor,Historical,25.7277,32.5945,0,6,17,0,0.0,Low,28.29,29,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,LUX_06,Luxor Museum,Luxor,Museum,25.7077,32.6396,0,9,17,0,0.0,Low,28.29,29,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,ASW_01,Abu Simbel,Aswan,Historical,22.3372,31.6258,0,6,17,0,0.0,Low,27.49,31,Cloudy,0.95,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,ASW_02,Philae Temple,Aswan,Historical,24.0258,32.8841,0,7,17,0,0.0,Low,27.49,31,Cloudy,0.95,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,ASW_03,Nubian Village,Aswan,Cultural,24.0889,32.8998,0,8,20,0,0.0,Low,27.49,31,Cloudy,0.95,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,ASW_04,Nubian Museum,Aswan,Museum,24.0822,32.8872,0,9,17,0,0.0,Low,27.49,31,Cloudy,0.95,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,ASW_05,Unfinished Obelisk,Aswan,Historical,24.0767,32.899,0,7,17,0,0.0,Low,27.49,31,Cloudy,0.95,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,SHM_01,Ras Mohammed,Sharm El Sheikh,Nature,27.7244,34.2583,0,6,18,0,0.0,Low,27.13,70,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.8,4,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,SHM_02,SOHO Square,Sharm El Sheikh,Leisure,27.9773,34.3947,0,10,23,0,0.0,Low,27.13,70,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.8,4,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,SHM_03,Naama Bay,Sharm El Sheikh,Leisure,27.9158,34.3299,1,0,23,1395,0.12,Low,27.13,70,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.8,4,1,1,Low,46.0,96.4,0
+2026-07-04T02:20:06.889629,2,Saturday,1,SHM_04,Sharks Bay,Sharm El Sheikh,Nature,27.963,34.3965,0,6,18,0,0.0,Low,27.13,70,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.8,4,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,SHM_05,Old Market,Sharm El Sheikh,Market,27.8605,34.3048,0,9,23,0,0.0,Low,27.13,70,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.8,4,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,DAH_01,Blue Hole,Dahab,Nature,28.5729,34.5362,0,6,18,0,0.0,Low,24.07,42,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.5,3,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,DAH_02,Dahab Lagoon,Dahab,Nature,28.4622,34.5,0,6,18,0,0.0,Low,24.07,42,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.5,3,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,DAH_03,Lighthouse Reef,Dahab,Nature,28.495,34.5168,0,6,18,0,0.0,Low,24.07,42,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.5,3,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,DAH_04,Three Pools,Dahab,Nature,28.43,34.5,0,6,18,0,0.0,Low,24.07,42,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.5,3,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,HRG_01,Giftun Island,Hurghada,Nature,27.227,33.9214,0,7,18,0,0.0,Low,28.5,51,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.8,4,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,HRG_02,Hurghada Marina,Hurghada,Leisure,27.2314,33.8417,1,0,23,1339,0.13,Low,28.5,51,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.8,4,1,1,Low,46.5,97.9,0
+2026-07-04T02:20:06.889629,2,Saturday,1,HRG_03,Mahmya Island,Hurghada,Nature,27.252,33.843,0,7,18,0,0.0,Low,28.5,51,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.8,4,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,HRG_04,Sand City,Hurghada,Cultural,27.12,33.826,0,9,18,0,0.0,Low,28.5,51,Clear,1.0,Summer Beach Tourism Season,Tourism Season,2.8,4,1,1,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,FYM_01,Wadi El Hitan,Fayoum,Nature,29.2715,30.1795,0,7,17,0,0.0,Low,23.62,83,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,FYM_02,Tunis Village,Fayoum,Cultural,29.4336,30.6415,0,8,20,0,0.0,Low,23.62,83,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,FYM_03,Lake Qarun,Fayoum,Nature,29.5,30.6,0,6,18,0,0.0,Low,23.62,83,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
+2026-07-04T02:20:06.889629,2,Saturday,1,FYM_04,Wadi El Rayan,Fayoum,Nature,29.2333,30.6167,0,6,18,0,0.0,Low,23.62,83,Clear,1.0,Summer School Vacation,School Vacation,1.6,1,1,0,Low,40.0,,0
