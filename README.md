@@ -198,57 +198,11 @@ Screenshots will be added after completing the web application.
 
 The Spirit of Ankh platform follows a modern cloud-native architecture that integrates data engineering, artificial intelligence, business intelligence, and web technologies into a unified tourism intelligence ecosystem.
 
-```mermaid
-flowchart TD
+## 🏛 Overall System Architecture
 
-subgraph DS["📂 Data Sources"]
-A["Historical Data Generator"]
-B["Reference Data<br/>(Locations • Events)"]
-C["Weather API"]
-end
-
-subgraph RT["📡 Real-Time Processing"]
-D["Sensor Simulator"]
-E["Apache Airflow"]
-end
-
-subgraph DW["❄️ Snowflake Data Warehouse"]
-F["🥉 Bronze"]
-G["🥈 Silver"]
-H["🥇 Gold"]
-end
-
-subgraph AI["🧠 Artificial Intelligence"]
-I["🤖 Crowd Prediction Model"]
-J["💬 AI Tourism Assistant"]
-end
-
-subgraph APPS["📊 Applications"]
-K["Power BI"]
-L["Flask API"]
-M["Spirit of Ankh Website"]
-end
-
-A --> D
-B --> D
-C --> D
-
-D --> E
-
-E --> F
-
-F --> G
-
-G --> H
-
-H --> I
-H --> J
-H --> K
-
-I --> L
-J --> L
-
-L --> M
+<p align="center">
+  <img src="assets/architecture.png" alt="Overall System Architecture" width="95%">
+</p>
 ```
 
 ---
