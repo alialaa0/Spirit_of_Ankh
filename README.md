@@ -281,28 +281,13 @@ The generated dataset serves as the foundation for analytics, machine learning, 
 
 ---
 
-## Workflow
+### Workflow
 
-```mermaid
-flowchart LR
-
-A["Reference Data"]
-B["Tourism Rules"]
-C["Weather Engine"]
-D["Events Engine"]
-
-A --> E["Historical Generator"]
-B --> E
-C --> E
-D --> E
-
-E --> F["Historical Dataset"]
-
-F --> G["CSV Files"]
-
-F --> H["Parquet Files"]
-```
-
+<p align="center">
+  <img src="assets/historical_generation.png"
+       alt="Historical Data Generation Workflow"
+       width="90%">
+</p>
 ---
 
 ## Main Components
