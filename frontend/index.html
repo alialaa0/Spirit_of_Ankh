@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spirit of Ankh - Interactive Egyptian Tourism & Live Insights</title>
+  <meta name="description" content="Explore Egypt's ancient wonders, museums, beaches, and nature reserves using our interactive luxury map and real-time tourism analytics dashboard.">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="styles.css?v=3.0">
+</head>
+<body>
+
+  <!-- Premium Navigation Header -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="#" class="logo" onclick="switchView('home'); return false;">
+        <svg viewBox="0 0 100 100">
+          <path d="M 50 10 C 35 10 30 25 30 40 C 30 55 45 60 48 65 L 48 70 L 30 70 L 30 78 L 48 78 L 48 90 C 48 91 52 91 52 90 L 52 78 L 70 78 L 70 70 L 52 70 L 52 65 C 55 60 70 55 70 40 C 70 25 65 10 50 10 Z M 50 18 C 60 18 62 28 62 40 C 62 52 56 57 50 60 C 44 57 38 52 38 40 C 38 28 40 18 50 18 Z" />
+        </svg>
+        <span>Spirit of <span class="gold-text">Ankh</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item active" id="nav-home"><a href="#" onclick="switchView('home'); return false;">Home</a></li>
+        <li class="nav-item" id="nav-map"><a href="#" onclick="switchView('map'); return false;">Interactive Map</a></li>
+        <li class="nav-item" id="nav-dashboard"><a href="#" onclick="switchView('dashboard'); return false;">Live Dashboard</a></li>
+        <li class="nav-item" id="nav-about"><a href="#" onclick="switchView('about'); return false;">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Multi-View Shell -->
+  <main>
+    
+    <!-- 1. HOME VIEW -->
+    <section id="view-home" class="view-section active">
+      <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <div class="hero-emblem">
+            <svg viewBox="0 0 100 100">
+              <path d="M 50 10 C 35 10 30 25 30 40 C 30 55 45 60 48 65 L 48 70 L 30 70 L 30 78 L 48 78 L 48 90 C 48 91 52 91 52 90 L 52 78 L 70 78 L 70 70 L 52 70 L 52 65 C 55 60 70 55 70 40 C 70 25 65 10 50 10 Z M 50 18 C 60 18 62 28 62 40 C 62 52 56 57 50 60 C 44 57 38 52 38 40 C 38 28 40 18 50 18 Z" />
+            </svg>
+          </div>
+          <h1>Explore Egypt’s <span class="gold-text">Immortal Spirit</span></h1>
+          <p>Welcome to Spirit of Ankh, Egypt's premier smart tourism visualization platform. Access real-time crowds, dynamic ticketing, live desert weather, and interactive digital guides for the ultimate exploration.</p>
+          <div class="hero-cta">
+            <button class="btn-primary" onclick="switchView('map')">Explore the Map</button>
+            <button class="btn-secondary" onclick="switchView('dashboard')">View Live Tourism Dashboard</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Featured Attractions Section -->
+      <div class="featured-section">
+        <div class="section-header">
+          <h2>Featured Wonders</h2>
+          <p>Immerse yourself in handpicked destinations blending thousands of years of human heritage with breathtaking natural landscapes.</p>
+        </div>
+        <div class="featured-grid" id="featured-attractions-grid">
+          <!-- Populated dynamically via app.js -->
+        </div>
+      </div>
+
+      <!-- Golden Legacy Gallery Section -->
+      <div class="gallery-section">
+        <div class="section-header">
+          <h2>The Golden Legacy</h2>
+          <p>Explore Tutankhamun's legendary pharaonic treasures, currently showcased in our premier museums.</p>
+        </div>
+        
+        <div class="gallery-grid">
+          <div class="gallery-item glass-panel" onclick="openLightbox('images/tutankhamun_mask.jpg', 'The Golden Mask', 'Crafted from 11kg of solid gold, this iconic funerary mask represents the young king Tutankhamun as the god Osiris, encrusted with lapis lazuli, turquoise, and carnelian.')">
+            <div class="gallery-img" style="background-image: url('images/tutankhamun_mask.jpg');"></div>
+            <div class="gallery-overlay">
+              <h3>The Golden Funerary Mask</h3>
+              <p>Osirian representation in solid gold</p>
+            </div>
+          </div>
+          
+          <div class="gallery-item glass-panel" onclick="openLightbox('images/tutankhamun_throne.jpg', 'The Golden Throne', 'The royal throne of Tutankhamun features a detailed depiction of the King and Queen beneath the sun rays of Aten, overlaid with gold leaf, silver, and semi-precious stone inlay.')">
+            <div class="gallery-img" style="background-image: url('images/tutankhamun_throne.jpg');"></div>
+            <div class="gallery-overlay">
+              <h3>The Golden Throne</h3>
+              <p>Royal relief under Aten's blessing</p>
+            </div>
+          </div>
+          
+          <div class="gallery-item glass-panel" onclick="openLightbox('images/tutankhamun_sarcophagus.jpg', 'The Sarcophagus', 'The innermost golden coffin of the pharaoh, made of solid gold and decorated with cloisonné work, depicting the king holding the crook and flail.')">
+            <div class="gallery-img" style="background-image: url('images/tutankhamun_sarcophagus.jpg');"></div>
+            <div class="gallery-overlay">
+              <h3>The Golden Sarcophagus</h3>
+              <p>Cloisonné masterwork of the inner coffin</p>
+            </div>
+          </div>
+
+          <div class="gallery-item glass-panel" onclick="openLightbox('images/tutankhamun_statues.jpg', 'Guardian Statues', 'Gilded wooden guard statues of the pharaoh depicting him ready for the afterlife journey, featuring intricate gold leaf details and deep black obsidian bases.')">
+            <div class="gallery-img" style="background-image: url('images/tutankhamun_statues.jpg');"></div>
+            <div class="gallery-overlay">
+              <h3>Gilded Guardian Statues</h3>
+              <p>Protectors of the pharaoh's chamber</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Curated Travel Recommendations Section -->
+      <div class="recommendations-section">
+        <div class="section-header">
+          <h2>Travel Insights &amp; Recommendations</h2>
+          <p>Pre-calculated recommendations based on historical sensor data and crowd pattern predictions.</p>
+        </div>
+        
+        <div class="recs-grid">
+          <div class="rec-card glass-panel">
+            <div class="rec-icon">🌅</div>
+            <h3>Best Visiting Hour</h3>
+            <p>Our algorithms show the lowest crowd density occurs between <strong>8:00 AM - 10:30 AM</strong>. Plan Luxor and Giza visits in this window to beat both the crowd and the desert heat.</p>
+          </div>
+          
+          <div class="rec-card glass-panel">
+            <div class="rec-icon">⚠️</div>
+            <h3>Peak Warning</h3>
+            <p>Historical telemetry shows that afternoon peaks (<strong>1:00 PM - 3:30 PM</strong>) regularly cross <strong>85% capacity</strong>, causing delays. We recommend indoor museums or seaside resorts during these hours.</p>
+          </div>
+
+          <div class="rec-card glass-panel">
+            <div class="rec-icon">✨</div>
+            <h3>Coastal Serenity</h3>
+            <p>For destinations like Dahab (Blue Hole) and Ras Mohammed, early morning weekdays are predicted to have a **Crowd Index below 0.35**. Enjoy pristine dive sites in complete isolation.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 2. MAP & EXPLORATION VIEW -->
+    <section id="view-map" class="view-section">
+      <div class="map-view-container">
+        <!-- Leaflet Map Mount Point -->
+        <div id="map"></div>
+
+        <!-- Floating Toggle Buttons (top-left) -->
+        <div class="map-toggle-btns">
+          <button class="map-toggle-btn" id="toggle-search-btn" title="Search" onclick="toggleMapPanel('search-panel')">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          </button>
+          <button class="map-toggle-btn" id="toggle-filter-btn" title="Refine Map" onclick="toggleMapPanel('filter-panel')">
+            <svg viewBox="0 0 24 24"><path d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39A.998.998 0 0 0 18.95 4H5.04a1 1 0 0 0-.79 1.61z"/></svg>
+          </button>
+        </div>
+
+        <!-- Search Panel (collapsible) -->
+        <div class="map-side-panel glass-panel" id="search-panel">
+          <div class="map-panel-header">
+            <span>Search</span>
+            <button class="map-panel-close" onclick="toggleMapPanel('search-panel')">✕</button>
+          </div>
+          <div class="search-box">
+            <input type="text" id="map-search-input" placeholder="Search pyramids, museums, beaches..." oninput="handleSearch(this.value)" autocomplete="off">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <div id="search-suggestions" class="search-suggestions-container" style="display: none;"></div>
+          </div>
+        </div>
+
+        <!-- Refine Map Filter Panel (collapsible) -->
+        <div class="map-side-panel glass-panel" id="filter-panel">
+          <div class="map-panel-header">
+            <span>Refine Map</span>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <button class="filter-reset-btn" onclick="resetFilters()">Reset</button>
+              <button class="map-panel-close" onclick="toggleMapPanel('filter-panel')">✕</button>
+            </div>
+          </div>
+          <div class="filter-panel-inner">
+            <div class="filter-group">
+              <label for="filter-city">City / region</label>
+              <select id="filter-city" onchange="applyFilters()">
+                <option value="all">All Locations</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="filter-category">Category</label>
+              <select id="filter-category" onchange="applyFilters()">
+                <option value="all">All Categories</option>
+                <option value="Historical">Historical Landmarks</option>
+                <option value="Museum">Museums</option>
+                <option value="Beach">Beaches &amp; Coastal</option>
+                <option value="Religious">Religious Monuments</option>
+                <option value="Nature">Nature Reserves</option>
+                <option value="Adventure">Adventure &amp; Oasis</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="filter-crowd">Crowd status</label>
+              <select id="filter-crowd" onchange="applyFilters()">
+                <option value="all">All Statuses</option>
+                <option value="normal">Normal (🟢)</option>
+                <option value="busy">Busy (🟡)</option>
+                <option value="overcrowded">Overcrowded (🔴)</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="filter-price">Max Ticket Price (EGP)</label>
+              <select id="filter-price" onchange="applyFilters()">
+                <option value="all">Any Price</option>
+                <option value="0">Free Entry</option>
+                <option value="300">Under 300 EGP</option>
+                <option value="600">Under 600 EGP</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label>Amenities / Tags</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-container"><input type="checkbox" id="filter-wheelchair" onchange="applyFilters()"><span class="checkmark"></span>Accessible</label>
+                <label class="checkbox-container"><input type="checkbox" id="filter-parking" onchange="applyFilters()"><span class="checkmark"></span>Parking</label>
+                <label class="checkbox-container"><input type="checkbox" id="filter-restaurants" onchange="applyFilters()"><span class="checkmark"></span>Dining</label>
+                <label class="checkbox-container"><input type="checkbox" id="filter-giftshop" onchange="applyFilters()"><span class="checkmark"></span>Gift Shop</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating UI Overlays: Right Details Drawer -->
+        <div class="info-drawer glass-panel" id="detail-drawer">
+          <div class="info-drawer-content" id="detail-drawer-content">
+            <!-- Rendered dynamically on click of marker via app.js -->
+          </div>
+        </div>
+
+        <!-- Attractions Tab Panel (right side) -->
+        <div class="attractions-tab glass-panel hidden" id="attractions-tab">
+          <div class="attractions-tab-header">
+            <div class="attractions-tab-title">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>Attractions</span>
+              <span class="attractions-count" id="attractions-count">0</span>
+            </div>
+            <button class="map-panel-close" onclick="closeAttractionsTab()" title="Close">✕</button>
+          </div>
+
+          <!-- Category Tabs -->
+          <div class="attractions-cat-tabs" id="attractions-cat-tabs">
+            <button class="att-cat-btn active" data-cat="all" onclick="filterAttractionsList('all')">All</button>
+            <button class="att-cat-btn" data-cat="Historical" onclick="filterAttractionsList('Historical')">🏛 Historical</button>
+            <button class="att-cat-btn" data-cat="Museum" onclick="filterAttractionsList('Museum')">🎨 Museums</button>
+            <button class="att-cat-btn" data-cat="Beach" onclick="filterAttractionsList('Beach')">🏖 Beaches</button>
+            <button class="att-cat-btn" data-cat="Desert" onclick="filterAttractionsList('Desert')">🏜 Deserts</button>
+            <button class="att-cat-btn" data-cat="Religious" onclick="filterAttractionsList('Religious')">🕌 Religious</button>
+          </div>
+
+          <!-- Attraction Cards List -->
+          <div class="attractions-list" id="attractions-list">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Attractions Tab Open Button (when tab is closed) -->
+        <button class="attractions-tab-open-btn visible" id="attractions-open-btn" onclick="openAttractionsTab()" title="Browse Attractions">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>Attractions</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- 3. LIVE TOURISM DASHBOARD VIEW -->
+    <section id="view-dashboard" class="view-section">
+      <div class="dashboard-container">
+        
+        <!-- Section Header -->
+        <div class="section-header" style="margin-bottom: 20px;">
+          <h2>Live Tourism Dashboard</h2>
+          <p>Real-time analytics and telemetry summarizing active visitors, capacities, and daily crowd trends across Egypt.</p>
+        </div>
+
+        <!-- Dashboard Mode Toggle Tabs -->
+        <div class="dashboard-tabs-container" style="margin-bottom: 25px; display: flex; justify-content: center;">
+          <div class="dashboard-tabs" style="display: flex; gap: 2px; background: var(--color-lapis); padding: 4px; border-radius: 30px; border: 1px solid var(--glass-border);">
+            <button id="tab-live-mode" class="dashboard-tab active" onclick="switchDashboardMode('live')" style="background: var(--color-gold); color: var(--color-sky-dark); font-weight: 700; border: none; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-family: var(--font-body); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all var(--transition-speed); display: flex; align-items: center; gap: 6px;">
+              <span class="pulse-indicator" style="display: inline-block; width: 8px; height: 8px; background-color: var(--status-normal); border-radius: 50%; box-shadow: 0 0 8px var(--status-normal); animation: pulseGlow 1.5s infinite;"></span> Live Telemetry (Today)
+            </button>
+            <button id="tab-predictions-mode" class="dashboard-tab" onclick="switchDashboardMode('predictions')" style="background: transparent; color: var(--color-sandstone); font-weight: 600; border: none; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-family: var(--font-body); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all var(--transition-speed);">
+              ✦ ML Predictions (Tomorrow)
+            </button>
+          </div>
+        </div>
+
+        <!-- Tomorrow's ML Insights Panel (visible in predictions mode) -->
+        <div id="predictions-insights-panel" class="predictions-insights-panel glass-panel" style="display: none; margin-bottom: 30px; padding: 25px;">
+          <h3 style="font-size: 1.25rem; color: var(--color-gold); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+            <svg style="width: 20px; height: 20px; fill: var(--color-gold);" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/></svg>
+            Tomorrow's Smart ML Insights
+          </h3>
+          <div class="insights-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+            <div class="insight-block" style="background: var(--glass-bg-light); border: 1px solid rgba(212, 175, 55, 0.1); border-radius: 8px; padding: 15px;">
+              <h4 style="color: var(--status-overcrowded); font-size: 0.9rem; margin-bottom: 12px; text-transform: uppercase; border-bottom: 1px solid rgba(239, 68, 68, 0.2); padding-bottom: 6px;">⚠️ Afternoon Overcrowding Warnings (1PM - 3PM)</h4>
+              <div id="insight-overcrowded-list" class="insight-list" style="display: flex; flex-direction: column; gap: 8px; max-height: 180px; overflow-y: auto; padding-right: 5px;">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+            <div class="insight-block" style="background: var(--glass-bg-light); border: 1px solid rgba(212, 175, 55, 0.1); border-radius: 8px; padding: 15px;">
+              <h4 style="color: var(--status-normal); font-size: 0.9rem; margin-bottom: 12px; text-transform: uppercase; border-bottom: 1px solid rgba(16, 185, 129, 0.2); padding-bottom: 6px;">🟢 Best Hour to Visit by City</h4>
+              <div id="insight-best-hours-grid" class="best-hours-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; max-height: 180px; overflow-y: auto; padding-right: 5px;">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Metrics Indicators -->
+        <div class="metrics-row">
+          <div class="metric-card glass-panel">
+            <div class="metric-info">
+              <h4>Visitors Today</h4>
+              <span class="number" id="dash-total-visitors">0</span>
+              <span class="sub-val">Simulated active telemetry</span>
+            </div>
+            <div class="metric-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+          </div>
+          
+          <div class="metric-card glass-panel">
+            <div class="metric-info">
+              <h4>Active Locations</h4>
+              <span class="number" id="dash-active-locations">0</span>
+              <span class="sub-val">Tracking destinations</span>
+            </div>
+            <div class="metric-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+          </div>
+
+          <div class="metric-card glass-panel">
+            <div class="metric-info">
+              <h4>Avg. Occupancy</h4>
+              <span class="number" id="dash-avg-occupancy">0%</span>
+              <span class="sub-val">Global capacity limit</span>
+            </div>
+            <div class="metric-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/></svg>
+            </div>
+          </div>
+
+          <div class="metric-card glass-panel">
+            <div class="metric-info">
+              <h4>Top Destination</h4>
+              <span class="number" id="dash-top-destination" style="font-size: 1.1rem; line-height: 2.2rem; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Loading...</span>
+              <span class="sub-val">Highest concurrent occupancy</span>
+            </div>
+            <div class="metric-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Segment -->
+        <div class="charts-grid">
+          <!-- 1. Regional Visitor Breakdown (Bar Chart) -->
+          <div class="chart-card glass-panel">
+            <h3>
+              <span>Regional Load Distribution</span>
+              <span>By City</span>
+            </h3>
+            <div class="chart-container">
+              <canvas id="chart-regional-visitors"></canvas>
+            </div>
+          </div>
+
+          <!-- 2. Category Distribution (Doughnut Chart) -->
+          <div class="chart-card glass-panel">
+            <h3>
+              <span>Interest Segments</span>
+              <span>By Category</span>
+            </h3>
+            <div class="chart-container">
+              <canvas id="chart-category-distribution"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lists Segment: High vs Low crowd list -->
+        <div class="lists-grid">
+          <div class="list-table-wrapper glass-panel" style="padding: 25px;">
+            <h3 style="font-size: 1.1rem; color: var(--color-gold); margin-bottom: 15px;">Most Visited & Busy Attractions</h3>
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Destination</th>
+                  <th>City</th>
+                  <th>Visitors</th>
+                  <th>Occupancy</th>
+                </tr>
+              </thead>
+              <tbody id="dash-busy-table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="list-table-wrapper glass-panel" style="padding: 25px;">
+            <h3 style="font-size: 1.1rem; color: var(--color-gold); margin-bottom: 15px;">Most Peaceful Locations</h3>
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Destination</th>
+                  <th>City</th>
+                  <th>Visitors</th>
+                  <th>Occupancy</th>
+                </tr>
+              </thead>
+              <tbody id="dash-peaceful-table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <!-- 5. ABOUT PAGE -->
+    <section id="view-about" class="view-section">
+      <div class="about-container">
+        <div class="about-header">
+          <h1>About the Platform</h1>
+          <p class="gold-text" style="font-family: var(--font-display); letter-spacing: 2px;">Preserving the Heritage, Directing the Flow</p>
+        </div>
+        
+        <div class="about-grid">
+          <div class="about-block glass-panel" style="padding: 30px;">
+            <h2>Our Mission</h2>
+            <p><strong>Spirit of Ankh</strong> is a state-of-the-art interactive smart-tourism dashboard. It integrates spatial mapping of archaeological and natural sites in Egypt with live occupancy tracking, capacity control, and weather widgets.</p>
+            <p>Our platform empowers travelers to plan their visits to Giza, Luxor, Alexandria, or the Sinai with precision, helping to balance visitor loads, preserve vulnerable antiquities from severe wear, and optimize ticket revenues for heritage conservation projects.</p>
+          </div>
+
+          <div class="about-block glass-panel" style="padding: 30px;">
+            <h2>Visual Representation</h2>
+            <p>Inspired by the pharaonic symbols of balance and eternal life, the platform uses colors drawn from the Egyptian environment: the midnight sky, gold, and desert sands. Gold accents represent the sun and royal artifacts, while dark blues reflect the Nile at night and lapis lazuli gemstones.</p>
+            <p>By blending modern WebGIS mappings with elegant design patterns, we showcase Egypt's visual luxury and digital future in one seamless interface.</p>
+          </div>
+
+          <div class="about-tech glass-panel">
+            <h3>Built with Modern Technologies</h3>
+            <div class="tech-badges-grid">
+              <div class="tech-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                <span>Leaflet.js (Map Mapping)</span>
+              </div>
+              <div class="tech-badge">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/></svg>
+                <span>Chart.js (Interactive Statistics)</span>
+              </div>
+              <div class="tech-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                <span>HTML5 / CSS3 / Vanilla JS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Premium Footer -->
+  <footer>
+    <div class="footer-logo">
+      <svg viewBox="0 0 100 100">
+        <path d="M 50 10 C 35 10 30 25 30 40 C 30 55 45 60 48 65 L 48 70 L 30 70 L 30 78 L 48 78 L 48 90 C 48 91 52 91 52 90 L 52 78 L 70 78 L 70 70 L 52 70 L 52 65 C 55 60 70 55 70 40 C 70 25 65 10 50 10 Z M 50 18 C 60 18 62 28 62 40 C 62 52 56 57 50 60 C 44 57 38 52 38 40 C 38 28 40 18 50 18 Z" />
+      </svg>
+      <span>Spirit of <span class="gold-text">Ankh</span></span>
+    </div>
+    <ul class="footer-nav">
+      <li><a href="#" onclick="switchView('home'); return false;">Home</a></li>
+      <li><a href="#" onclick="switchView('map'); return false;">Map</a></li>
+      <li><a href="#" onclick="switchView('dashboard'); return false;">Dashboard</a></li>
+      <li><a href="#" onclick="switchView('about'); return false;">About</a></li>
+    </ul>
+    <p>© 2026 Spirit of Ankh. Designed for Ancient Splendor & Modern Telemetry. All rights reserved.</p>
+  </footer>
+
+  <!-- Dynamic Lightbox Modal -->
+  <div id="gallery-lightbox" class="lightbox-modal" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="Showcase">
+      <div class="lightbox-caption">
+        <h2 id="lightbox-title"></h2>
+        <p id="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chatbot Toast Popup Container -->
+  <div id="chatbot-toast" class="chatbot-toast glass-panel hidden">
+    <div class="chatbot-toast-header">
+      <div class="chatbot-toast-icon-wrap">
+        <span style="font-size: 1rem;">✨</span>
+        <span class="chatbot-toast-icon">Ankh AI Guide</span>
+      </div>
+      <button class="chatbot-toast-close" onclick="closeChatbotToast()">&times;</button>
+    </div>
+    <div id="chatbot-toast-message" class="chatbot-toast-message">
+      Loading crowd analysis...
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!--
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║           Spirit of Ankh — Modular JavaScript                   ║
+    ║  Scripts are loaded in dependency order (data first, init last) ║
+    ╚══════════════════════════════════════════════════════════════════╝
+  -->
+
+  <!-- 1. Data Layer: all static data arrays -->
+  <script src="data/attractions.data.js?v=3.0"></script>
+  <script src="data/predictions.data.js?v=3.0"></script>
+
+  <!-- 2. Global State: shared variables used by all modules -->
+  <script src="js/state.js?v=3.0"></script>
+
+  <!-- 3. UI Modules (order matters — later modules call earlier ones) -->
+  <script src="js/router.js?v=3.0"></script>
+  <script src="js/gallery.js?v=3.0"></script>
+  <script src="js/attractions.js?v=3.0"></script>
+  <script src="js/search.js?v=3.0"></script>
+  <script src="js/drawer.js?v=3.0"></script>
+  <script src="js/map.js?v=3.0"></script>
+  <script src="js/dashboard.js?v=3.0"></script>
+
+  <!-- 4. Data & Integration Modules -->
+  <script src="js/predictions.js?v=3.0"></script>
+  <script src="js/telemetry.js?v=3.0"></script>
+  <script src="js/weather.js?v=3.0"></script>
+  <script src="js/chatbot.js?v=3.0"></script>
+
+  <!-- 5. Init: loaded LAST — bootstraps the whole app -->
+  <script src="js/init.js?v=3.0"></script>
+
+</body>
+</html>
+
