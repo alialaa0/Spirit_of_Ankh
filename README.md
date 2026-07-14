@@ -342,31 +342,17 @@ Instead of relying on expensive physical sensors, the simulator combines weather
 
 ---
 
-## Sensor Architecture
+## 📡 Sensor Architecture
 
-```mermaid
-flowchart LR
+The Sensor Simulator generates realistic real-time tourism records by combining reference data, live weather information, event logic, and crowd behavior models.
 
-A["Reference Data"]
+It serves as the primary streaming data source for the Spirit of Ankh platform.
 
-B["Weather API"]
-
-C["Events Engine"]
-
-D["Crowd Engine"]
-
-A --> E["Sensor Simulator"]
-
-B --> E
-
-C --> E
-
-D --> E
-
-E --> F["Tourism Dataset"]
-
-F --> G["Snowflake"]
-```
+<p align="center">
+  <img src="assets/sensor_architecture.png"
+       alt="Sensor Architecture"
+       width="90%">
+</p>
 
 ---
 
@@ -420,31 +406,17 @@ Historical datasets and real-time sensor data are consolidated into a unified an
 
 ---
 
-# 🏛 Warehouse Architecture
+# 🏛 Data Warehouse Architecture
 
-```mermaid
-flowchart TD
+The **Snowflake Data Warehouse** is designed using the **Medallion Architecture (Bronze → Silver → Gold)** to transform raw tourism data into trusted, analytics-ready datasets.
 
-A["📊 Historical Dataset"]
-B["📡 Sensor Simulator"]
+The Gold layer serves as the single source of truth for dashboards, machine learning models, AI recommendations, and the Spirit of Ankh web application.
 
-A --> C["🥉 Bronze Layer"]
-B --> C
-
-C --> D["🥈 Silver Layer"]
-
-D --> E["🥇 Gold Layer"]
-
-E --> F["📈 Power BI"]
-
-E --> G["🤖 Machine Learning"]
-
-E --> H["💬 AI Tourism Assistant"]
-
-E --> I["🌐 Flask API"]
-
-I --> J["💻 Website"]
-```
+<p align="center">
+  <img src="assets/warehouse.jpeg"
+       alt="Snowflake Data Warehouse Architecture"
+       width="95%">
+</p>
 
 ---
 
@@ -776,29 +748,19 @@ The workflow executes every **10 minutes**, ensuring that simulated sensor data,
 
 ---
 
-## Pipeline Workflow
+## 🔄 Apache Airflow Automation
 
-```mermaid
-flowchart LR
+Spirit of Ankh automates its end-to-end data pipeline using **Apache Airflow** running inside **Docker containers**.
 
-A["📡 Run Sensor Simulator"]
+The workflow executes **every 10 minutes**, ensuring that live sensor data, machine learning predictions, and analytical datasets remain continuously updated without manual intervention.
 
-B["❄️ Load Data into Snowflake"]
+### Pipeline Workflow
 
-C["✔ Data Quality Validation"]
-
-D["🤖 Generate ML Predictions"]
-
-E["🌐 Website & API"]
-
-A --> B
-
-B --> C
-
-C --> D
-
-D --> E
-```
+<p align="center">
+  <img src="assets/airflow_pipeline.png"
+       alt="Apache Airflow Pipeline Workflow"
+       width="90%">
+</p>
 
 ---
 
@@ -955,9 +917,15 @@ Coming Soon
 
 > Screenshots will be added after the web application is completed.
 
-### Home Page
+### 🏠 Home Page
 
-*(Coming Soon)*
+The Spirit of Ankh home page provides an interactive entry point for users, featuring tourism insights, live crowd monitoring, AI-powered recommendations, and quick access to all platform services.
+
+<p align="center">
+  <img src="assets/Ui/1.png"
+       alt="Spirit of Ankh Home Page"
+       width="95%">
+</p>
 
 ---
 
