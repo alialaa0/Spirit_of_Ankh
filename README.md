@@ -9,12 +9,11 @@ Modern Data Engineering • Artificial Intelligence • Machine Learning • Rea
 </p>
 
 ---
-
 <!-- ================= Banner ================= -->
 
-> 🚧 **Banner Coming Soon**
-
-<!-- Add banner here later -->
+<p align="center">
+  <img src="assets/banner.png" alt="Spirit of Ankh Banner" width="100%">
+</p>
 
 ---
 
