@@ -2,657 +2,195 @@
 
 # 🏛️ Spirit of Ankh
 
-### Smart Tourism Intelligence Platform for Egypt
+### AI-Powered Smart Tourism Intelligence Platform for Egypt
 
-Modern Data Engineering • Machine Learning • Real-Time Analytics • Snowflake • Airflow • Azure
+<p align="center">
+Modern Data Engineering • Artificial Intelligence • Machine Learning • Real-Time Analytics
+</p>
 
 ---
 
-<!-- Banner will be added here -->
+<!-- ================= Banner ================= -->
 
-<!-- Badges -->
+> 🚧 **Banner Coming Soon**
+
+<!-- Add banner here later -->
+
+---
+
+<!-- ================= Badges ================= -->
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
 ![Snowflake](https://img.shields.io/badge/Snowflake-Data%20Warehouse-29B5E8?logo=snowflake)
 ![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-Orchestration-017CEE?logo=apacheairflow)
-![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker)
 ![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4?logo=microsoftazure)
-![Power BI](https://img.shields.io/badge/Power%20BI-Analytics-F2C811?logo=powerbi)
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?logo=powerbi)
 ![Machine Learning](https://img.shields.io/badge/Machine-Learning-success)
-![Status](https://img.shields.io/badge/Project-Active-success)
+![AI Assistant](https://img.shields.io/badge/AI-Tourism%20Assistant-purple)
+![License](https://img.shields.io/badge/License-MIT-success)
 
 </div>
 
 ---
 
-# 🌍 Project Overview
+# 🌍 Overview
 
-Spirit of Ankh is a modern data engineering platform designed to monitor, analyze, and predict tourism crowd dynamics across Egypt's major tourist attractions.
+**Spirit of Ankh** is an AI-powered Smart Tourism Intelligence Platform designed to help tourism authorities and visitors make smarter decisions through real-time analytics, machine learning, and intelligent recommendations.
 
-The platform integrates historical data generation, real-time sensor simulation, cloud data warehousing, machine learning, and interactive analytics into a unified ecosystem that supports smarter tourism management and data-driven decision making.
+The platform combines historical data generation, live sensor simulation, cloud data engineering, predictive analytics, and AI-powered assistance into a unified ecosystem capable of monitoring, analyzing, and predicting tourism crowd behavior across Egypt's major tourist attractions.
 
-Unlike traditional crowd monitoring systems that depend on expensive IoT infrastructure, Spirit of Ankh leverages realistic simulation, cloud-native technologies, and predictive analytics to deliver a scalable and cost-effective solution.
+Unlike traditional tourism monitoring systems that rely on expensive IoT infrastructure, Spirit of Ankh leverages realistic simulation, scalable cloud technologies, and artificial intelligence to provide a cost-effective and extensible solution.
 
 ---
 
 # 🚀 Repository Highlights
 
 - 🇪🇬 Covers Egypt's major tourist attractions
-- 🏛️ Supports **45 tourist locations**
-- 📅 Generates **3 years of historical tourism data (2023–2025)**
-- 📊 Produces over **580,000 realistic historical records**
+- 🏛️ 45 Tourist Locations
+- 📅 Three Years of Historical Tourism Data (2023–2025)
+- 📊 580K+ Realistic Historical Records
 - 📡 Real-Time Sensor Simulation
 - ☁️ Modern ELT Data Pipeline
 - ❄️ Snowflake Data Warehouse
 - 🔄 Apache Airflow Automation
 - 🤖 Machine Learning Crowd Prediction
-- 📈 Power BI Interactive Dashboards
-- 🌐 Web-based Tourism Intelligence Platform
+- 💬 AI Tourism Recommendation Assistant
+- 📈 Power BI Dashboards
+- 🌐 Interactive Web Platform
+
+---
+
+# 🚧 Problem Statement
+
+Tourism is one of Egypt's most valuable economic sectors, attracting millions of visitors every year.
+
+As visitor numbers continue to grow, managing crowd distribution across tourist attractions becomes increasingly challenging.
+
+Current solutions typically depend on manual monitoring, ticketing systems, or costly IoT infrastructure, making them difficult to deploy at scale.
+
+In addition, there is no publicly available historical tourism dataset for Egypt that supports advanced analytics or predictive modeling.
+
+These challenges motivated the development of **Spirit of Ankh**, a platform that combines data engineering, artificial intelligence, and business analytics to create a modern tourism intelligence ecosystem.
 
 ---
 
 # 🎯 Project Objectives
 
-The project aims to build a scalable tourism intelligence platform capable of:
+Spirit of Ankh aims to:
 
-- Monitoring crowd levels across tourist attractions
-- Simulating real-time tourism activity
-- Generating realistic historical datasets
-- Automating ELT data pipelines
-- Building an enterprise-grade data warehouse
-- Predicting future crowd occupancy using Machine Learning
-- Providing actionable insights through interactive dashboards
-- Supporting tourism authorities in data-driven decision making
-
----
-
-# ✨ Key Features
-
-## 📊 Historical Data Generation
-
-Generate realistic tourism datasets covering multiple years using custom simulation engines.
+- Monitor tourism crowd levels in real time.
+- Generate realistic historical tourism datasets.
+- Build a scalable cloud-based data warehouse.
+- Automate the ELT pipeline.
+- Predict future crowd occupancy using Machine Learning.
+- Recommend less crowded tourist attractions.
+- Support data-driven tourism management.
+- Improve visitor experience through AI recommendations.
 
 ---
 
-## 📡 Real-Time Sensor Simulation
+# 📊 Business Impact
 
-Simulate live visitor activity using weather-aware and event-aware crowd generation.
+Spirit of Ankh transforms raw tourism data into actionable insights.
+
+The platform helps tourism authorities:
+
+- Detect overcrowding before it becomes critical.
+- Improve visitor distribution.
+- Reduce congestion.
+- Optimize operational resources.
+- Support strategic planning.
+- Increase visitor satisfaction.
+
+Visitors also benefit from personalized recommendations, allowing them to discover alternative attractions with lower crowd levels while maintaining a high-quality tourism experience.
 
 ---
 
-## ☁️ Modern ELT Pipeline
+# ✨ Core Features
 
-Automated ingestion, transformation, and modeling powered by Snowflake and SQL.
+| Feature | Description |
+|----------|-------------|
+| 📊 Historical Data Generation | Generates realistic multi-year tourism datasets |
+| 📡 Real-Time Sensor Simulation | Simulates live tourism activity |
+| ❄️ Snowflake Data Warehouse | Enterprise-grade analytical warehouse |
+| 🔄 ELT Pipeline | Automated ingestion and transformation |
+| 🤖 Crowd Prediction | Forecasts tomorrow's occupancy using Machine Learning |
+| 💬 AI Tourism Assistant | Recommends alternative attractions based on crowd conditions |
+| 💎 Hidden Gems Engine | Discovers less crowded tourist destinations |
+| 📈 Power BI Dashboards | Interactive operational analytics |
+| 🌐 Web Platform | User-friendly tourism intelligence website |
 
 ---
 
-## 🧠 Tourism Intelligence KPIs
+# 🧠 Artificial Intelligence
 
-Custom tourism analytics including:
+Spirit of Ankh integrates two complementary AI services.
 
-- Crowd Persistence Index (CPI)
-- Crowd Status
+## 🤖 Crowd Prediction Model
+
+A Machine Learning model predicts future occupancy levels for each tourist attraction using historical data and contextual features.
+
+Predictions include:
+
+- Tomorrow's Occupancy Rate
+- Expected Crowd Status
+- Visitor Trends
+
+These predictions support proactive tourism planning.
+
+---
+
+## 💬 AI Tourism Assistant
+
+The AI Tourism Assistant goes beyond prediction.
+
+It analyzes:
+
+- Current crowd status
+- Tomorrow's predictions
+- Hidden Gems rankings
+- Tourist preferences
+
+and recommends alternative attractions whenever a selected location is expected to be overcrowded.
+
+### Example
+
+**User**
+
+> I want to visit the Pyramids tomorrow.
+
+**Assistant**
+
+> The Pyramids are expected to experience very high occupancy between 1 PM and 3 PM.
+
+> Recommended alternatives:
+
+- Saqqara Necropolis
+- Dahshur Pyramids
+- National Museum of Egyptian Civilization
+
+This transforms the platform from a prediction system into an intelligent tourism decision support platform.
+
+---
+
+# 🌐 Live Demo
+
+🚧 Coming Soon
+
+Website:
+> (Will be added after deployment)
+
+---
+
+# 📸 Website Preview
+
+Screenshots will be added after completing the web application.
+
+- Home Page
+- Dashboard
+- Live Crowd Map
 - Hidden Gems
-- Weather Impact
-- Holiday Impact
-- Resource Utilization
-
----
-
-## 🤖 Machine Learning
-
-Predict future crowd occupancy using a Random Forest regression model.
-
----
-
-## 📈 Interactive Dashboards
-
-Business-ready dashboards providing real-time operational insights.
-
----
-
-# 🏗️ Overall System Architecture
-
-```mermaid
-flowchart LR
-
-A[Historical Data Generator]
-B[Sensor Simulator]
-C[Weather API]
-D[Events Engine]
-
-A --> E[Snowflake Bronze]
-B --> E
-C --> B
-D --> B
-
-E --> F[Snowflake Silver]
-F --> G[Snowflake Gold]
-
-G --> H[Machine Learning]
-
-G --> I[Power BI]
-
-H --> J[Prediction API]
-
-J --> K[Website]
-
-G --> K
-```
-
----
-
-# 🛠️ Technology Stack
-
-| Category | Technologies |
-|-----------|--------------|
-| Programming | Python |
-| Cloud | Microsoft Azure |
-| Data Warehouse | Snowflake |
-| Data Transformation | SQL |
-| Orchestration | Apache Airflow |
-| Machine Learning | Scikit-Learn |
-| Data Processing | Pandas, NumPy |
-| Dashboard | Power BI |
-| Containerization | Docker |
-| API | Flask |
-| Version Control | Git & GitHub |
-
----
-
-# 📁 Repository Structure
-
-```text
-Spirit_of_Ankh
-
-├── airflow-docker/
-├── data/
-│   ├── historical/
-│   └── reference-data/
-│
-├── data-generation/
-├── data-warehouse/
-│   ├── bronze/
-│   ├── silver/
-│   └── gold/
-│
-├── docs/
-├── machine-learning/
-├── sensor-simulator/
-│
-├── README.md
-├── config.py
-├── .gitignore
-└── .env.example
-```
-
----
-
-# 📦 Project Modules
-
-The platform consists of five major modules:
-
-| Module | Description |
-|---------|-------------|
-| Data Generation | Generates realistic historical tourism datasets |
-| Sensor Simulator | Simulates real-time visitor activity |
-| Data Warehouse | Snowflake Bronze, Silver and Gold architecture |
-| Machine Learning | Predicts future crowd occupancy |
-| Airflow | Automates the entire data pipeline |
-
---- 
-# 📊 Historical Data Generation
-
-The Historical Data Generation module creates realistic tourism datasets covering three consecutive years (2023–2025). Since no public historical tourism dataset exists for Egyptian attractions with the required level of detail, this module was developed to simulate realistic visitor behavior based on tourism seasons, holidays, weather conditions, attraction popularity, and special events.
-
-The generated dataset serves as the primary historical data source for analytics, machine learning, and dashboarding.
-
----
-
-## 📌 Overview
-
-This module produces hourly tourism records for all supported tourist attractions across Egypt.
-
-Each generated record contains:
-
-- Timestamp
-- Tourist Attraction
-- Visitor Count
-- Occupancy Rate
-- Weather Information
-- Tourism Season
-- Active Events
-- Crowd KPIs
-- Contextual Metadata
-
-The final output contains over **580,000 realistic tourism records** spanning three years.
-
----
-
-## ⚙️ Workflow
-
-```mermaid
-flowchart LR
-
-A[Reference Data]
-B[Tourism Rules]
-C[Weather Engine]
-D[Events Engine]
-
-A --> E[Historical Generator]
-B --> E
-C --> E
-D --> E
-
-E --> F[Historical Dataset]
-
-F --> G[CSV]
-
-F --> H[Parquet]
-```
-
----
-
-## 📁 Module Structure
-
-```text
-data-generation/
-
-historical_generator.py
-
-historical_generator_test.py
-
-historical_rules.py
-
-historical_events_engine.py
-
-weather_engine.py
-
-crowd_engine.py
-
-event_engine.py
-```
-
----
-
-## 📥 Input
-
-Reference Data
-
-- Tourist Locations
-- Holidays
-- Tourism Events
-
-Simulation Parameters
-
-- Tourism Seasons
-- Weather Conditions
-- Attraction Popularity
-- School Vacations
-- Islamic Holidays
-- National Events
-
----
-
-## 📤 Output
-
-Generated Files
-
-```text
-data/
-
-historical/
-
-historical_2023.csv
-
-historical_2024.csv
-
-historical_2025.csv
-
-historical_2023.parquet
-
-historical_2024.parquet
-
-historical_2025.parquet
-```
-
----
-
-## 📈 Generated Metrics
-
-The generator calculates multiple tourism indicators:
-
-- Visitor Count
-- Occupancy Rate
-- Crowd Status
-- CPI
-- Weather Impact
-- Holiday Impact
-- Event Impact
-- Tourism Season
-- Resource Utilization
-
----
-
-## 🧠 Business Logic
-
-Tourism demand is influenced by several factors:
-
-- Attraction popularity
-- City tourism season
-- Active events
-- Public holidays
-- School vacations
-- Weekend multiplier
-- Weather conditions
-
-These variables are combined to produce realistic crowd behavior rather than purely random values.
-
----
-
-## 🏆 Key Features
-
-- Hourly simulation
-- Multi-year generation
-- Event-aware
-- Weather-aware
-- Season-aware
-- City-specific tourism patterns
-- Islamic holiday support
-- CSV and Parquet export
-
----
-
-## 🚀 Why This Module?
-
-The lack of publicly available historical tourism datasets for Egypt makes it difficult to develop analytics and machine learning solutions.
-
-This module eliminates that limitation by generating realistic, scalable, and reproducible tourism datasets suitable for data engineering pipelines, business intelligence, and predictive analytics.
-
-# ❄️ Snowflake Data Warehouse
-
-The Snowflake Data Warehouse serves as the central analytical layer of the Spirit of Ankh platform.
-
-It follows a modern **Bronze → Silver → Gold** architecture to ensure data quality, scalability, and efficient analytical processing.
-
-Historical datasets and simulated real-time sensor data are unified into a single analytical model that powers dashboards, APIs, and machine learning predictions.
-
----
-
-## 🏛 Warehouse Architecture
-
-```mermaid
-flowchart TD
-
-A[Historical Dataset]
-B[Sensor Simulator]
-
-A --> C[Bronze Layer]
-B --> C
-
-C --> D[Silver Layer]
-
-D --> E[Gold Layer]
-
-E --> F[Power BI]
-
-E --> G[Machine Learning]
-
-E --> H[Website API]
-```
-
----
-
-## 📁 Module Structure
-
-```text
-data-warehouse/
-
-├── bronze/
-│   ├── 01_setup.sql
-│   └── 02_bronze_layer.sql
-│
-├── silver/
-│   └── 03_silver_layer.sql
-│
-├── gold/
-│   ├── 04_gold_layer.sql
-│   ├── 05_views.sql
-│   └── 06_verify.sql
-│
-├── historical_loader.py
-├── snowflake_loader.py
-└── README.md
-```
-
----
-
-# 🥉 Bronze Layer
-
-The Bronze layer stores raw data exactly as received without applying business logic.
-
-This layer preserves the original records and provides a reliable source for future transformations.
-
-### Data Sources
-
-- Historical Tourism Dataset
-- Sensor Simulator Output
-
-### Responsibilities
-
-- Raw Data Storage
-- Initial Data Loading
-- Auditability
-- Source Preservation
-
----
-
-# 🥈 Silver Layer
-
-The Silver layer transforms raw records into clean, standardized datasets suitable for analytics.
-
-Data quality rules are applied before loading records into the analytical layer.
-
-### Responsibilities
-
-- Remove duplicates
-- Handle missing values
-- Validate records
-- Normalize data
-- Calculate derived metrics
-- Standardize timestamps
-
----
-
-# 🥇 Gold Layer
-
-The Gold layer contains business-ready datasets optimized for reporting, dashboards, APIs, and machine learning.
-
-This layer exposes facts, dimensions, and analytical views.
-
-### Core Tables
-
-| Table | Purpose |
-|---------|---------|
-| DIM_LOCATION | Tourist attraction information |
-| DIM_DATE | Calendar dimension |
-| FCT_CROWD_UNIFIED | Unified historical + live crowd data |
-| FCT_CROWD_SUMMARY | Daily aggregated KPIs |
-| LOCATION_QUALITY_SCORE | Hidden Gems ranking |
-| ML_PREDICTIONS_NEXT_HOUR | ML predictions |
-| ML_PREDICTIONS_TOMORROW | ML predictions |
-
----
-
-# 📊 Analytical Views
-
-The warehouse exposes analytical views for reporting and business intelligence.
-
-| View | Description |
-|--------|-------------|
-| VW_CURRENT_STATUS | Current crowd status |
-| VW_ACTIVE_ALERTS | Active overcrowding alerts |
-| VW_MONTHLY_TREND | Monthly tourism trends |
-| VW_LOCATION_PERFORMANCE | Attraction performance scorecard |
-| VW_WEATHER_IMPACT | Weather effect analysis |
-| VW_HOLIDAY_IMPACT | Holiday impact analysis |
-
----
-
-# ⭐ Hidden Gems Engine
-
-One of the platform's unique analytical features is the Hidden Gems engine.
-
-Instead of only detecting crowded locations, the system also recommends alternative attractions with lower occupancy and higher visitor quality scores.
-
-This enables better visitor distribution and improves the overall tourism experience.
-
----
-
-# 🔄 ELT Process
-
-```mermaid
-flowchart LR
-
-A[Historical Generator]
-B[Sensor Simulator]
-
-A --> C[Bronze]
-
-B --> C
-
-C --> D[Silver]
-
-D --> E[Gold]
-
-E --> F[Power BI]
-
-E --> G[Prediction API]
-
-E --> H[Machine Learning]
-```
-
----
-
-# ✔ Data Quality
-
-Before any data reaches the Gold layer, several validation steps are performed:
-
-- Duplicate detection
-- Missing value validation
-- Timestamp validation
-- Capacity validation
-- Occupancy validation
-- Data consistency checks
-
----
-
-# 🚀 Why Snowflake?
-
-Snowflake was selected because it provides:
-
-- Cloud-native architecture
-- Elastic compute
-- Separation of storage and compute
-- High-performance analytical queries
-- Excellent scalability
-- Native support for modern ELT workflows
-- Seamless integration with Power BI and Python 
-
-# 🤖 Machine Learning
-
-Spirit of Ankh incorporates machine learning to predict future crowd occupancy levels across tourist attractions.
-
-The prediction model enables tourism authorities to proactively manage visitor distribution and identify potential overcrowding before it occurs.
-
----
-
-## 🎯 Objective
-
-Predict future occupancy rates using historical tourism patterns and contextual features.
-
----
-
-## 🧠 Model
-
-Random Forest Regressor
-
-Target Variable
-
-- Occupancy Rate
-
-Performance
-
-- R² Score ≈ 0.88
-- MAE ≈ 0.067
-
----
-
-## Features Used
-
-- Hour of Day
-- Weekend Indicator
-- School Vacation
-- Tourism Season
-- Attraction
-- City
-- Attraction Type
-- Popularity Tier
-- Maximum Capacity
-
----
-
-## Machine Learning Workflow
-
-```mermaid
-flowchart LR
-
-A[Historical Data]
-
-B[Feature Engineering]
-
-C[Random Forest]
-
-D[Predictions]
-
-E[Snowflake]
-
-F[API]
-
-G[Website]
-
-A --> B
-
-B --> C
-
-C --> D
-
-D --> E
-
-E --> F
-
-F --> G
-```
-
----
-
-## Prediction Outputs
-
-The model predicts:
-
-- Next Hour Occupancy
-- Tomorrow Occupancy
-
-These predictions are stored inside Snowflake and exposed through the API for visualization in the website.
-
----
-
-## Why Random Forest?
-
-Random Forest was selected because it:
-
-- Handles nonlinear relationships
-- Works well with mixed feature types
-- Requires minimal feature scaling
-- Produces robust predictions
-- Is easy to retrain when historical data changes
+- AI Assistant
+- Predictions
+- Location Details
