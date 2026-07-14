@@ -368,3 +368,193 @@ These variables are combined to produce realistic crowd behavior rather than pur
 The lack of publicly available historical tourism datasets for Egypt makes it difficult to develop analytics and machine learning solutions.
 
 This module eliminates that limitation by generating realistic, scalable, and reproducible tourism datasets suitable for data engineering pipelines, business intelligence, and predictive analytics.
+
+# ❄️ Snowflake Data Warehouse
+
+The Snowflake Data Warehouse serves as the central analytical layer of the Spirit of Ankh platform.
+
+It follows a modern **Bronze → Silver → Gold** architecture to ensure data quality, scalability, and efficient analytical processing.
+
+Historical datasets and simulated real-time sensor data are unified into a single analytical model that powers dashboards, APIs, and machine learning predictions.
+
+---
+
+## 🏛 Warehouse Architecture
+
+```mermaid
+flowchart TD
+
+A[Historical Dataset]
+B[Sensor Simulator]
+
+A --> C[Bronze Layer]
+B --> C
+
+C --> D[Silver Layer]
+
+D --> E[Gold Layer]
+
+E --> F[Power BI]
+
+E --> G[Machine Learning]
+
+E --> H[Website API]
+```
+
+---
+
+## 📁 Module Structure
+
+```text
+data-warehouse/
+
+├── bronze/
+│   ├── 01_setup.sql
+│   └── 02_bronze_layer.sql
+│
+├── silver/
+│   └── 03_silver_layer.sql
+│
+├── gold/
+│   ├── 04_gold_layer.sql
+│   ├── 05_views.sql
+│   └── 06_verify.sql
+│
+├── historical_loader.py
+├── snowflake_loader.py
+└── README.md
+```
+
+---
+
+# 🥉 Bronze Layer
+
+The Bronze layer stores raw data exactly as received without applying business logic.
+
+This layer preserves the original records and provides a reliable source for future transformations.
+
+### Data Sources
+
+- Historical Tourism Dataset
+- Sensor Simulator Output
+
+### Responsibilities
+
+- Raw Data Storage
+- Initial Data Loading
+- Auditability
+- Source Preservation
+
+---
+
+# 🥈 Silver Layer
+
+The Silver layer transforms raw records into clean, standardized datasets suitable for analytics.
+
+Data quality rules are applied before loading records into the analytical layer.
+
+### Responsibilities
+
+- Remove duplicates
+- Handle missing values
+- Validate records
+- Normalize data
+- Calculate derived metrics
+- Standardize timestamps
+
+---
+
+# 🥇 Gold Layer
+
+The Gold layer contains business-ready datasets optimized for reporting, dashboards, APIs, and machine learning.
+
+This layer exposes facts, dimensions, and analytical views.
+
+### Core Tables
+
+| Table | Purpose |
+|---------|---------|
+| DIM_LOCATION | Tourist attraction information |
+| DIM_DATE | Calendar dimension |
+| FCT_CROWD_UNIFIED | Unified historical + live crowd data |
+| FCT_CROWD_SUMMARY | Daily aggregated KPIs |
+| LOCATION_QUALITY_SCORE | Hidden Gems ranking |
+| ML_PREDICTIONS_NEXT_HOUR | ML predictions |
+| ML_PREDICTIONS_TOMORROW | ML predictions |
+
+---
+
+# 📊 Analytical Views
+
+The warehouse exposes analytical views for reporting and business intelligence.
+
+| View | Description |
+|--------|-------------|
+| VW_CURRENT_STATUS | Current crowd status |
+| VW_ACTIVE_ALERTS | Active overcrowding alerts |
+| VW_MONTHLY_TREND | Monthly tourism trends |
+| VW_LOCATION_PERFORMANCE | Attraction performance scorecard |
+| VW_WEATHER_IMPACT | Weather effect analysis |
+| VW_HOLIDAY_IMPACT | Holiday impact analysis |
+
+---
+
+# ⭐ Hidden Gems Engine
+
+One of the platform's unique analytical features is the Hidden Gems engine.
+
+Instead of only detecting crowded locations, the system also recommends alternative attractions with lower occupancy and higher visitor quality scores.
+
+This enables better visitor distribution and improves the overall tourism experience.
+
+---
+
+# 🔄 ELT Process
+
+```mermaid
+flowchart LR
+
+A[Historical Generator]
+B[Sensor Simulator]
+
+A --> C[Bronze]
+
+B --> C
+
+C --> D[Silver]
+
+D --> E[Gold]
+
+E --> F[Power BI]
+
+E --> G[Prediction API]
+
+E --> H[Machine Learning]
+```
+
+---
+
+# ✔ Data Quality
+
+Before any data reaches the Gold layer, several validation steps are performed:
+
+- Duplicate detection
+- Missing value validation
+- Timestamp validation
+- Capacity validation
+- Occupancy validation
+- Data consistency checks
+
+---
+
+# 🚀 Why Snowflake?
+
+Snowflake was selected because it provides:
+
+- Cloud-native architecture
+- Elastic compute
+- Separation of storage and compute
+- High-performance analytical queries
+- Excellent scalability
+- Native support for modern ELT workflows
+- Seamless integration with Power BI and Python
