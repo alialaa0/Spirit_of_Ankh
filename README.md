@@ -557,4 +557,102 @@ Snowflake was selected because it provides:
 - High-performance analytical queries
 - Excellent scalability
 - Native support for modern ELT workflows
-- Seamless integration with Power BI and Python
+- Seamless integration with Power BI and Python 
+
+# 🤖 Machine Learning
+
+Spirit of Ankh incorporates machine learning to predict future crowd occupancy levels across tourist attractions.
+
+The prediction model enables tourism authorities to proactively manage visitor distribution and identify potential overcrowding before it occurs.
+
+---
+
+## 🎯 Objective
+
+Predict future occupancy rates using historical tourism patterns and contextual features.
+
+---
+
+## 🧠 Model
+
+Random Forest Regressor
+
+Target Variable
+
+- Occupancy Rate
+
+Performance
+
+- R² Score ≈ 0.88
+- MAE ≈ 0.067
+
+---
+
+## Features Used
+
+- Hour of Day
+- Weekend Indicator
+- School Vacation
+- Tourism Season
+- Attraction
+- City
+- Attraction Type
+- Popularity Tier
+- Maximum Capacity
+
+---
+
+## Machine Learning Workflow
+
+```mermaid
+flowchart LR
+
+A[Historical Data]
+
+B[Feature Engineering]
+
+C[Random Forest]
+
+D[Predictions]
+
+E[Snowflake]
+
+F[API]
+
+G[Website]
+
+A --> B
+
+B --> C
+
+C --> D
+
+D --> E
+
+E --> F
+
+F --> G
+```
+
+---
+
+## Prediction Outputs
+
+The model predicts:
+
+- Next Hour Occupancy
+- Tomorrow Occupancy
+
+These predictions are stored inside Snowflake and exposed through the API for visualization in the website.
+
+---
+
+## Why Random Forest?
+
+Random Forest was selected because it:
+
+- Handles nonlinear relationships
+- Works well with mixed feature types
+- Requires minimal feature scaling
+- Produces robust predictions
+- Is easy to retrain when historical data changes
