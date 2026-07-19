@@ -175,12 +175,13 @@ This transforms the platform from a prediction system into an intelligent touris
 
 # 🌐 Live Demo
 
-🚧 Coming Soon
 
-Website:
-> (Will be added after deployment)
 
----
+Website
+
+```
+https://noraahfarouk.github.io/Spirit_of_Ankh/
+```
 
 # 📸 Website Preview
 
