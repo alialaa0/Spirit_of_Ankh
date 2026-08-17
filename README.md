@@ -1022,7 +1022,6 @@ Additional technical documentation is available inside the `docs/` directory.
 
 **Spirit of Ankh Development Team**
 
-Samsung Innovation Campus (SIC)
 
 ---
 
